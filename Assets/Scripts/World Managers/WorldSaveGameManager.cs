@@ -10,7 +10,7 @@ namespace SG
     {
         public static WorldSaveGameManager instance;
 
-        [SerializeField] int worldSceneIndex = 1;
+        public int worldSceneIndex = 1;
 
         // THERE CAN ONLY BE ONE INSTANCE OF THIS SCRIPT AT A TIME
         private void Awake()
