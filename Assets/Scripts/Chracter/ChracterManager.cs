@@ -41,6 +41,11 @@ namespace SG
             }
         }
 
+        protected virtual void LateUpdate()
+        {
+
+        }
+
     }
 
 }

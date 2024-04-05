@@ -32,6 +32,27 @@ namespace SG
             playerLocomotionManager.HandleAllMovement();
         }
 
+        public override void OnNetworkSpawn()
+        {
+            base.OnNetworkSpawn();
+
+            //if this player object is owned by the client
+            if(IsOwner)
+            {
+                PlayerCamera.instance.player = this;
+            }
+        }
+
+        protected override void LateUpdate()
+        {
+            if(!IsOwner)
+            {
+                return;
+            }
+            base.LateUpdate();
+            PlayerCamera.instance.HandleAllCameraActions();
+        }
+
     }
 }
 
